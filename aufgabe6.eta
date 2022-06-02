@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- ./views/aufgabe3.eta -->
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <h1>Rechner 123</h1>
+        <form action="/" method="post">
+            <p>Zahl1: 
+            <input type="text" name="Zahl1"/>
+            </p>
+            <p>Rechenzeichen (+ oder *):
+            <input type="text" name="Rechenzeichen"/>
+            </p>
+            <p>Zahl2:
+            <input type="text" name="Zahl2"/>
+            </>
+            <input type="submit" name="send"></input>
+        <div id="Ergebnis" name="Ergebnis">
+        <% if(it.ergebnis != ""){ %>
+        <p>Ergebnis:  <%= it.ergebnis %> </p>
+        <% } %>
+         </div>
+        <% if(it.lastRechnungen != []){ %>
+        <ol>
+            <% for( let i = 0; i< it.lastRechnungen.length; i++){  %>
+                <li>
+                    <%= it.lastRechnungen[i]   %>
+                </li>
+            <% } %>
+        </ol>
+        <% } %>
+        </form>
+    </body>
+</html>
